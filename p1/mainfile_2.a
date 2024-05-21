@@ -1,0 +1,116 @@
+
+out.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+   0:	e92d4800 	push	{fp, lr}
+   4:	e28db004 	add	fp, sp, #4
+   8:	e24dd008 	sub	sp, sp, #8
+   c:	ebfffffe 	bl	0 <MRCC_voidInit>
+  10:	e3a00002 	mov	r0, #2
+  14:	e3a01000 	mov	r1, #0
+  18:	ebfffffe 	bl	0 <MRCC_voidEnablePeripheral>
+  1c:	e3a00000 	mov	r0, #0
+  20:	e3a01000 	mov	r1, #0
+  24:	e3a02001 	mov	r2, #1
+  28:	ebfffffe 	bl	0 <MGPIO_voidSetPinMode>
+  2c:	e3a00000 	mov	r0, #0
+  30:	e3a01001 	mov	r1, #1
+  34:	e3a02001 	mov	r2, #1
+  38:	ebfffffe 	bl	0 <MGPIO_voidSetPinMode>
+  3c:	e3a00000 	mov	r0, #0
+  40:	e3a01002 	mov	r1, #2
+  44:	e3a02001 	mov	r2, #1
+  48:	ebfffffe 	bl	0 <MGPIO_voidSetPinMode>
+  4c:	e3a00000 	mov	r0, #0
+  50:	e3a01000 	mov	r1, #0
+  54:	e3a02000 	mov	r2, #0
+  58:	e3a03000 	mov	r3, #0
+  5c:	ebfffffe 	bl	0 <MGPIO_voidSetPinOutputMode>
+  60:	e3a00000 	mov	r0, #0
+  64:	e3a01001 	mov	r1, #1
+  68:	e3a02000 	mov	r2, #0
+  6c:	e3a03000 	mov	r3, #0
+  70:	ebfffffe 	bl	0 <MGPIO_voidSetPinOutputMode>
+  74:	e3a00000 	mov	r0, #0
+  78:	e3a01002 	mov	r1, #2
+  7c:	e3a02000 	mov	r2, #0
+  80:	e3a03000 	mov	r3, #0
+  84:	ebfffffe 	bl	0 <MGPIO_voidSetPinOutputMode>
+  88:	e3a00000 	mov	r0, #0
+  8c:	e3a01000 	mov	r1, #0
+  90:	e3a02001 	mov	r2, #1
+  94:	ebfffffe 	bl	0 <MGPIO_voidSetPinValue>
+  98:	e3a03000 	mov	r3, #0
+  9c:	e14b30b6 	strh	r3, [fp, #-6]
+  a0:	ea000003 	b	b4 <main+0xb4>
+  a4:	e1a00000 	nop			; (mov r0, r0)
+  a8:	e15b30b6 	ldrh	r3, [fp, #-6]
+  ac:	e2833001 	add	r3, r3, #1
+  b0:	e14b30b6 	strh	r3, [fp, #-6]
+  b4:	e15b20b6 	ldrh	r2, [fp, #-6]
+  b8:	e59f3080 	ldr	r3, [pc, #128]	; 140 <main+0x140>
+  bc:	e1520003 	cmp	r2, r3
+  c0:	9afffff7 	bls	a4 <main+0xa4>
+  c4:	e3a00000 	mov	r0, #0
+  c8:	e3a01001 	mov	r1, #1
+  cc:	e3a02001 	mov	r2, #1
+  d0:	ebfffffe 	bl	0 <MGPIO_voidSetPinValue>
+  d4:	e3a03000 	mov	r3, #0
+  d8:	e14b30b6 	strh	r3, [fp, #-6]
+  dc:	ea000003 	b	f0 <main+0xf0>
+  e0:	e1a00000 	nop			; (mov r0, r0)
+  e4:	e15b30b6 	ldrh	r3, [fp, #-6]
+  e8:	e2833001 	add	r3, r3, #1
+  ec:	e14b30b6 	strh	r3, [fp, #-6]
+  f0:	e15b20b6 	ldrh	r2, [fp, #-6]
+  f4:	e59f3048 	ldr	r3, [pc, #72]	; 144 <main+0x144>
+  f8:	e1520003 	cmp	r2, r3
+  fc:	9afffff7 	bls	e0 <main+0xe0>
+ 100:	e3a00000 	mov	r0, #0
+ 104:	e3a01002 	mov	r1, #2
+ 108:	e3a02001 	mov	r2, #1
+ 10c:	ebfffffe 	bl	0 <MGPIO_voidSetPinValue>
+ 110:	e3a03000 	mov	r3, #0
+ 114:	e14b30b6 	strh	r3, [fp, #-6]
+ 118:	ea000003 	b	12c <main+0x12c>
+ 11c:	e1a00000 	nop			; (mov r0, r0)
+ 120:	e15b30b6 	ldrh	r3, [fp, #-6]
+ 124:	e2833001 	add	r3, r3, #1
+ 128:	e14b30b6 	strh	r3, [fp, #-6]
+ 12c:	e15b20b6 	ldrh	r2, [fp, #-6]
+ 130:	e59f3010 	ldr	r3, [pc, #16]	; 148 <main+0x148>
+ 134:	e1520003 	cmp	r2, r3
+ 138:	9afffff7 	bls	11c <main+0x11c>
+ 13c:	eaffffd1 	b	88 <main+0x88>
+ 140:	000003e7 	andeq	r0, r0, r7, ror #7
+ 144:	0000270f 	andeq	r2, r0, pc, lsl #14
+ 148:	00003e7f 	andeq	r3, r0, pc, ror lr
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	43434700 	movtmi	r4, #14080	; 0x3700
+   4:	4728203a 			; <UNDEFINED> instruction: 0x4728203a
+   8:	2029554e 	eorcs	r5, r9, lr, asr #10
+   c:	2e372e34 	mrccs	14, 1, r2, cr7, cr4, {1}
+  10:	Address 0x00000010 is out of bounds.
+
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00002f41 	andeq	r2, r0, r1, asr #30
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	00000025 	andeq	r0, r0, r5, lsr #32
+  10:	4d524105 	ldfmie	f4, [r2, #-20]	; 0xffffffec
+  14:	4d445437 	cfstrdmi	mvd5, [r4, #-220]	; 0xffffff24
+  18:	02060049 	andeq	r0, r6, #73	; 0x49
+  1c:	01090108 	tsteq	r9, r8, lsl #2
+  20:	01140412 	tsteq	r4, r2, lsl r4
+  24:	03170115 	tsteq	r7, #1073741829	; 0x40000005
+  28:	01190118 	tsteq	r9, r8, lsl r1
+  2c:	061e011a 			; <UNDEFINED> instruction: 0x061e011a

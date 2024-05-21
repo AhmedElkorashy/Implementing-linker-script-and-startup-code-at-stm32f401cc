@@ -1,0 +1,9 @@
+//this for linking all files with linker and butting it at file.elf
+$ arm-none-eabi-gcc *.o -T stm32f401linkerscript.ld -nostdlib -o file.elf
+ //this for viewing the section from the file.elf
+$ arm-none-eabi-objdump -h file.elf
+
+//for map file
+$ arm-none-eabi-gcc *.o -T stm32f401linkerscript.ld  -nostdlib -Wl,-Map=file.map
+//symboletable
+arm-none-eabi-nm file.elf>symboltable.txt
